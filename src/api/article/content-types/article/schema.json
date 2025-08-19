@@ -15,6 +15,9 @@
     "title": {
       "type": "string"
     },
+    "slider": {
+      "type": "boolean"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title"
