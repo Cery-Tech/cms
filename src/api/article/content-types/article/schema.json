@@ -13,30 +13,34 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "slider": {
-      "type": "boolean"
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 850
+    },
+    "slider": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
     "article": {
       "type": "richtext"
     },
-    "description": {
-      "type": "text",
-      "maxLength": 80
-    },
     "cover": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos"
+        "files"
       ]
     },
     "author": {
