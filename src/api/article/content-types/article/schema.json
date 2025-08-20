@@ -21,6 +21,10 @@
       "targetField": "title",
       "required": true
     },
+    "readingTime": {
+      "type": "integer",
+      "required": true
+    },
     "description": {
       "type": "richtext",
       "required": true,
