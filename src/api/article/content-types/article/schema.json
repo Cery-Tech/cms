@@ -28,7 +28,7 @@
     "description": {
       "type": "richtext",
       "required": true,
-      "maxLength": 850
+      "maxLength": 350
     },
     "slider": {
       "type": "boolean",
