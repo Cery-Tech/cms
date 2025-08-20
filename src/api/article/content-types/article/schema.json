@@ -35,6 +35,11 @@
       "required": true,
       "default": false
     },
+    "popular": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
     "article": {
       "type": "richtext"
     },

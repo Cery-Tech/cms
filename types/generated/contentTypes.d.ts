@@ -425,7 +425,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 350;
+        maxLength: 380;
       }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -433,6 +433,9 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
+    popular: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     readingTime: Schema.Attribute.Integer & Schema.Attribute.Required;
     slider: Schema.Attribute.Boolean &
