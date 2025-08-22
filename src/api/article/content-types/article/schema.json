@@ -16,6 +16,25 @@
       "type": "string",
       "required": true
     },
+    "metaTitle": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 60,
+      "required": true,
+      "unique": true
+    },
+    "metaDescription": {
+      "type": "string",
+      "minLength": 70,
+      "maxLength": 160,
+      "required": true,
+      "unique": true
+    },
+    "metaKeywords": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
     "slug": {
       "type": "uid",
       "targetField": "title",
@@ -23,7 +42,8 @@
     },
     "readingTime": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "description": {
       "type": "richtext",
