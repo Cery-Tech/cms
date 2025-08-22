@@ -83,6 +83,27 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "articles"
+    },
+    "ogTitle": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 60,
+      "required": true
+    },
+    "ogDescription": {
+      "type": "string",
+      "minLength": 90,
+      "maxLength": 200,
+      "required": true
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

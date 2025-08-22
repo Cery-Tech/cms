@@ -450,6 +450,20 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         maxLength: 60;
         minLength: 30;
       }>;
+    ogDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+        minLength: 90;
+      }>;
+    ogImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    ogTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+        minLength: 30;
+      }>;
     popular: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
