@@ -16,7 +16,8 @@
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "articles": {
       "type": "relation",
@@ -24,8 +25,41 @@
       "target": "api::article.article",
       "mappedBy": "category"
     },
-    "description": {
-      "type": "text"
+    "metaTitle": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 60,
+      "required": true
+    },
+    "metaDescription": {
+      "type": "string",
+      "minLength": 70,
+      "maxLength": 160,
+      "required": true
+    },
+    "metaKeywords": {
+      "type": "string",
+      "required": true
+    },
+    "ogTitle": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 60
+    },
+    "ogDescription": {
+      "type": "string",
+      "minLength": 90,
+      "maxLength": 200,
+      "required": true
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

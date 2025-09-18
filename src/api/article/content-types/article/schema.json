@@ -13,21 +13,64 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "description": {
-      "type": "text",
-      "maxLength": 80
+    "metaTitle": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 60,
+      "required": true,
+      "unique": true
+    },
+    "metaDescription": {
+      "type": "string",
+      "minLength": 70,
+      "maxLength": 160,
+      "required": true,
+      "unique": true
+    },
+    "metaKeywords": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
+    },
+    "readingTime": {
+      "type": "integer",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 380
+    },
+    "slider": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "popular": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "article": {
+      "type": "richtext"
     },
     "cover": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
     "author": {
       "type": "relation",
@@ -41,9 +84,26 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "ogTitle": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 60,
+      "required": true
+    },
+    "ogDescription": {
+      "type": "string",
+      "minLength": 90,
+      "maxLength": 200,
+      "required": true
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
