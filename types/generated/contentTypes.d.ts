@@ -416,9 +416,11 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   attributes: {
     article: Schema.Attribute.RichText;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    cover: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    cover: Schema.Attribute.Media<'images' | 'files'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -427,6 +429,11 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 380;
       }>;
+    ImgArticle: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    ImgArticleMob: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    imgList: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -524,7 +531,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
