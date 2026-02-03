@@ -131,11 +131,11 @@
         "files"
       ]
     },
-    "publishedIn": {
+    "editedIn": {
       "type": "date",
       "required": true
     },
-    "editedIn": {
+    "publishedIn": {
       "type": "date",
       "required": true
     }
