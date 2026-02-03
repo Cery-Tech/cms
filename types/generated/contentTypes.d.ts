@@ -429,6 +429,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 380;
       }>;
+    editedIn: Schema.Attribute.Date & Schema.Attribute.Required;
     ImgArticle: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     ImgArticleMob: Schema.Attribute.Media<'images' | 'files'> &
@@ -475,6 +476,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
+    publishedIn: Schema.Attribute.Date & Schema.Attribute.Required;
     readingTime: Schema.Attribute.Integer & Schema.Attribute.Required;
     slider: Schema.Attribute.Boolean &
       Schema.Attribute.Required &

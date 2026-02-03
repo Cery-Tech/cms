@@ -130,6 +130,14 @@
         "images",
         "files"
       ]
+    },
+    "publishedIn": {
+      "type": "date",
+      "required": true
+    },
+    "editedIn": {
+      "type": "date",
+      "required": true
     }
   }
 }
